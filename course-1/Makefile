@@ -24,5 +24,8 @@ init-one:
 #@ - run: Run jupyter notebook.
 run-one:
 	@cd ${CONTEXT_COURSE_1}/ && \
+	if [ ! -d ".venv" ]; then \
+		${MAKE} init-one; \
+	fi && \
 	source .venv/bin/activate && \
 	jupyter notebook --notebook-dir=.
