@@ -3,6 +3,8 @@
 
 #@ Commands:
 .PHONY: help-one init-one run-one
+.DEFAULT_GOAL := help-one
+
 SHELL := /bin/bash
 CONTEXT_COURSE_1 := $(or $(CONTEXT_COURSE_1),.)
 
