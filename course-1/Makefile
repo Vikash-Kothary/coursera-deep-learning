@@ -29,3 +29,10 @@ run-one:
 	fi && \
 	source .venv/bin/activate && \
 	jupyter notebook --notebook-dir=.
+
+#@ - clean: Delete venv
+clean-one:
+	@cd ${CONTEXT_COURSE_1}/ && \
+	if [ -d ".venv" ]; then \
+		trash .venv; \
+	fi
